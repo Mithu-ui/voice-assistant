@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Voice Agent</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <div class="header">
+      <h1>🎤 AI Voice Agent</h1>
+      <p>Chat with AI using voice or text</p>
+    </div>
 
-<h2>🎤 AI Voice Agent</h2>
-<button onclick="startListening()">Start Talking</button>
+    <div id="chat" class="chat-box"></div>
 
-<div id="chat"></div>
+    <div class="input-section">
+      <div class="input-controls">
+        <input 
+          type="text" 
+          id="messageInput" 
+          placeholder="Type a message or click microphone..." 
+          onkeypress="handleKeyPress(event)"
+        >
+        <button 
+          id="voiceBtn" 
+          onclick="startListening()" 
+          class="voice-btn"
+          title="Start voice input"
+        >
+          🎤
+        </button>
+        <button 
+          onclick="sendMessage()" 
+          class="send-btn"
+          title="Send message"
+        >
+          ➤
+        </button>
+      </div>
+      <p id="status" class="status"></p>
+    </div>
+  </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

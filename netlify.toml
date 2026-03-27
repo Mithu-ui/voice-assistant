@@ -1,0 +1,23 @@
+[build]
+  command = "npm run build"
+  functions = "netlify/functions"
+  publish = "."
+
+[dev]
+  command = "npm run dev"
+  targetPort = 8000
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables
+[context.production.environment]
+  OPENAI_API_KEY = ""
+
+[context.deploy-preview.environment]
+  OPENAI_API_KEY = ""
+
+[context.branch-deploy.environment]
+  OPENAI_API_KEY = ""
